@@ -71,14 +71,6 @@ static void grouper_power_init(struct power_module *module)
 
 static void grouper_power_set_interactive(struct power_module *module, int on)
 {
-    /*
-     * Lower maximum frequency when screen is off.  CPU 0 and 1 share a
-     * cpufreq policy.
-     */
-
-    sysfs_write("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
-                on ? "1300000" : "700000");
-
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/input_boost",
                 on ? "1" : "0");
 
