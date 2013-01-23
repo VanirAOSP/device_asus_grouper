@@ -4,6 +4,9 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
 
 on init
+    #we're emulated, so GO HARD!
+    mount tmpfs tmpfs /storage mode=0050,uid=0,gid=1028
+
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
