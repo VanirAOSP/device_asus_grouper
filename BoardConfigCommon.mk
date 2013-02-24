@@ -43,8 +43,6 @@ TARGET_EXTRA_CFLAGS += $(call cc-option,-mtune=cortex-a9) $(call cc-option,-mcpu
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
 # Allowing unaligned access for NEON memory instructions.
 ARCH_ARM_NEON_SUPPORTS_UNALIGNED_ACCESS := true
-# Sets the upper size limit for NEON unaligned memory access in memcpy.
-BIONIC_MEMCPY_ALIGNMENT_DIVIDER := 224
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
