@@ -23,4 +23,6 @@
     <!-- How many icons may be shown at once in the system bar. Includes any
          slots that may be reused for things like IME control. def (5)-->
     <integer name="config_maxNotificationIcons">10</integer>
+
+    <bool name="config_recents_interface_for_tablets">true</bool>
 </resources>
