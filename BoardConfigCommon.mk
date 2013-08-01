@@ -35,6 +35,7 @@ TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
+TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Set to true for platforms with 32 byte L2 cache line.
@@ -62,6 +63,9 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 
 TARGET_BOOTLOADER_BOARD_NAME := grouper
 TARGET_NO_BOOTLOADER := true
+
+# use the new recovery.fstab format
+RECOVERY_FSTAB_VERSION=2
 
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := false
