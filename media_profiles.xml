@@ -141,6 +141,19 @@
              channels="1" />
     </EncoderProfile>
 
+    <EncoderProfile quality="720p" fileFormat="3gp" duration="30">
+      <Video codec="h264"
+             bitRate="16000000"
+             width="1280"
+             height="720"
+             frameRate="30" />
+
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="48000"
+             channels="1" />
+    </EncoderProfile>
+
     <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="384000"
@@ -192,6 +205,23 @@
              channels="1" />
     </EncoderProfile>
     
+    <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
+      <Video codec="h264"
+             bitRate="12000000"
+             width="1280"
+             height="720"
+             frameRate="30" />
+
+      <!--
+            The Audio part of the profile will not be used since time lapse mode
+            does not capture audio
+      -->
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="16000"
+             channels="1" />
+    </EncoderProfile>
+
     <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="12000000"

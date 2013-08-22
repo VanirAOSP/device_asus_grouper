@@ -56,10 +56,15 @@
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
     <string-array translatable="false" name="config_tether_usb_regexs">
+        <item>"rndis0"</item>
     </string-array>
 
     <!-- Array of allowable ConnectivityManager network types for tethering -->
     <integer-array translatable="false" name="config_tether_upstream_types">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
     </integer-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -237,6 +242,20 @@
     <!-- empty string to disable, or like: /sys/kernel/fast_charge/force_fast_charge
          it is disabled by default so devices need to add an overlay to enable-->
     <string name="config_fastChargePath" translatable="false">/sys/kernel/fast_charge/force_fast_charge</string>
+
+    <!-- Hardware 'face' keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <!-- TODO: this
+    <integer name="config_deviceHardwareKeys">0</integer>
+    -->
 
     <!-- Setting to false will disable the IME switcher implementation for tablets -->
     <bool name="config_show_IMEswitcher">true</bool>

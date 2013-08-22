@@ -35,13 +35,7 @@ TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
-TARGET_CPU_VARIANT := tegra2
-ARCH_ARM_HAVE_TLS_REGISTER := true
-
-# Set to true for platforms with 32 byte L2 cache line.
-ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
-# Allowing unaligned access for NEON memory instructions.
-ARCH_ARM_NEON_SUPPORTS_UNALIGNED_ACCESS := true
+TARGET_CPU_VARIANT := cortex-a9
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -88,6 +82,12 @@ endif
 NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
+
+# Required for CWM
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+TARGET_KERNEL_SOURCE := kernel/asus/grouper
+TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
 
 BOARD_SEPOLICY_DIRS += \
 	device/asus/grouper/sepolicy
