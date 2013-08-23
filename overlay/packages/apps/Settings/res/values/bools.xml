@@ -21,4 +21,6 @@
     <!-- Show dock settings when docked -->
     <bool name="has_dock_settings">true</bool>
 
+    <!-- Whether device has camera flash or torch capabilities -->
+    <bool name="has_torch">false</bool>
 </resources>
