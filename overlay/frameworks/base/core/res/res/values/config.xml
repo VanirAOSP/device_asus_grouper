@@ -256,9 +256,7 @@
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <!-- TODO: this
     <integer name="config_deviceHardwareKeys">0</integer>
-    -->
 
     <!-- Setting to false will disable the IME switcher implementation for tablets -->
     <bool name="config_show_IMEswitcher">true</bool>
