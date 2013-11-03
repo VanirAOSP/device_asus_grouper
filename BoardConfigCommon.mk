@@ -36,11 +36,6 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a9
 
-#Kernel targeting info
-TARGET_KERNEL_SOURCE := kernel/asus/grouper
-TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
-
 TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
