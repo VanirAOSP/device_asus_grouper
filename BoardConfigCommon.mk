@@ -20,6 +20,9 @@
 # definition file).
 #
 
+#Experimental
+TARGET_NO_BOOTLOADER := true
+
 # inherit from the proprietary version
 # needed for BP-flashing updater extensions
 
