@@ -18,6 +18,11 @@ on init
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
 
+    # create directory for mounting usb drives
+    mkdir /storage/usbdisk 0666 system system
+    symlink /storage/usbdisk /mnt/usbdisk
+    symlink /mnt/usbdisk /usbdisk
+
 on early-boot
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
@@ -61,6 +66,9 @@ on post-fs-data
     mkdir /data/lightsensor 751 system system
     mkdir /data/calibration
     mkdir /data/amit
+
+    # btmacreader
+    mkdir /data/mac
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
