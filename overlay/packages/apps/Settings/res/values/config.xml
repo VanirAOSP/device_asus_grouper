@@ -19,4 +19,11 @@
     <!-- Show Expanded Desktop preference -->
     <bool name="config_show_expandedDesktop">true</bool>
 
+    <!-- Volume Rocker Wake Support. Some devices do not support (PMU) this.
+         Setting to false will disable Volume Rocker Wake support -->
+    <bool name="config_show_volumeRockerWake">true</bool>
+
+    <!-- Whether device has camera flash or torch capabilities -->
+    <bool name="has_torch">false</bool>
+
 </resources>
