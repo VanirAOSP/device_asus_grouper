@@ -37,6 +37,9 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a9
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 
+# Enable various prefetch optimizations
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=32
+
 TARGET_IS_A_CHEAP_ASUS_TABLET := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -90,3 +93,4 @@ TARGET_KERNEL_SOURCE := kernel/asus/grouper
 TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
 
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+WITH_DEXPREOPT := true
