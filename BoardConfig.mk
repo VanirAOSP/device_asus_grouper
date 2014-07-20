@@ -28,16 +28,10 @@
 # the true camera library when the vendor tree is available.  Similarly,
 # we set USE_PROPRIETARY_AUDIO_EXTENSIONS to true in the proprietary variant as
 # well.
-
-TARGET_KERNEL_SOURCE := kernel/asus/grouper-faux
-TARGET_KERNEL_CONFIG := faux_grouper_defconfig
-
 USE_CAMERA_STUB := true
 USE_PROPRIETARY_AUDIO_EXTENSIONS := false
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.grouper
-
-TARGET_BINDER_VM_MEGABYTES := 1
 
 TARGET_RECOVERY_UI_LIB := librecovery_ui_grouper
 RECOVERY_FSTAB_VERSION := 2
