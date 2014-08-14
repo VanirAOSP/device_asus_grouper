@@ -256,5 +256,4 @@
 
     <!-- enabling WifiDisplay(Miracast Source)-->
     <bool name="config_enableWifiDisplay">true</bool>
-
 </resources>
