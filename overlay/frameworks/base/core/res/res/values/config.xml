@@ -89,6 +89,8 @@
     The default represents a dual-mode smartphone -->
     <string translatable="false" name="config_wifi_p2p_device_type">1-0050F204-1</string>
 
+    <bool name="config_ui_enableFadingMarquee">true</bool>
+
     <!-- List of file paths for USB host busses to exclude from USB host support.
          For example, if the first USB bus on the device is used to communicate
          with the modem or some other restricted hardware, add "/dev/bus/usb/001/"
@@ -238,21 +240,11 @@
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
+    <!-- Whether UI for multi user should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
 
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
     <integer name="config_safe_media_volume_index">6</integer>
-
-    <!-- Hardware 'face' keys present on the device, stored as a bit field.
-         This integer should equal the sum of the corresponding value for each
-         of the following keys present:
-             1 - Home
-             2 - Back
-             4 - Menu
-             8 - Assistant (search)
-            16 - App switch
-         For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">0</integer>
 
     <!-- enabling WifiDisplay(Miracast Source)-->
     <bool name="config_enableWifiDisplay">true</bool>

@@ -36,8 +36,6 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a9
 
-TARGET_BINDER_VM_MEGABYTES := 1
-
 TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
@@ -89,3 +87,27 @@ TARGET_KERNEL_SOURCE := kernel/asus/grouper
 TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
 
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
+BOARD_SEPOLICY_DIRS += \
+        device/asus/grouper/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+        file_contexts \
+        genfs_contexts \
+        bluetooth.te \
+        device.te \
+        domain.te \
+        drmserver.te \
+        init_shell.te \
+        file.te \
+        gpsd.te \
+        keystore.te \
+        lmkd.te \
+        mediaserver.te \
+        rild.te \
+        sensors_config.te \
+        surfaceflinger.te \
+        system_app.te \
+        system_server.te \
+        ueventd.te \
+        vold.te
