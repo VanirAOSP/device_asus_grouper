@@ -276,6 +276,10 @@ on boot
 # Interactive governor settings
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boost_factor
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boost_factor
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/core_lock_count
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/core_lock_count
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/core_lock_period
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/core_lock_period
     chown system system /sys/devices/system/cpu/cpufreq/interactive/go_maxspeed_load
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/go_maxspeed_load
     chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
@@ -405,7 +409,7 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
 #Sensor load calibration files end
 
 # virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -t 4 -l /data/media /mnt/shell/emulated
     class late_start
 
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
