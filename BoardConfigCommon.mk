@@ -42,6 +42,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 endif
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
+# Disable journaling on system.img to save space.
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 6567231488
 BOARD_FLASH_BLOCK_SIZE := 4096
 
@@ -85,10 +87,6 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 
 BOARD_USES_GROUPER_MODULES := true
 
-# Required for CWM
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_RECOVERY_SWIPE := true
-
 TARGET_KERNEL_SOURCE := kernel/asus/grouper
 TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
 
@@ -117,4 +115,5 @@ BOARD_SEPOLICY_UNION += \
         system_app.te \
         system_server.te \
         ueventd.te \
-        vold.te
+        vold.te \
+        radio.te
