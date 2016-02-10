@@ -41,11 +41,15 @@ ifeq ($(HOST_OS),linux)
 TARGET_USERIMAGES_USE_F2FS := true
 endif
 
+BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12582912
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
-# Disable journaling on system.img to save space.
-BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
+BOARD_CACHEIMAGE_PARTITION_SIZE := 464519168
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 6567231488
 BOARD_FLASH_BLOCK_SIZE := 4096
+
+# Disable journaling on system.img to save space.
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -92,28 +96,4 @@ TARGET_KERNEL_CONFIG := cyanogenmod_grouper_defconfig
 
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
-BOARD_SEPOLICY_DIRS += \
-        device/asus/grouper/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-        file_contexts \
-        genfs_contexts \
-        bluetooth.te \
-        device.te \
-        domain.te \
-        drmserver.te \
-        init_shell.te \
-        file.te \
-        gpsd.te \
-        keystore.te \
-        lmkd.te \
-        mediaserver.te \
-        recovery.te \
-        rild.te \
-        sensors_config.te \
-        surfaceflinger.te \
-        system_app.te \
-        system_server.te \
-        ueventd.te \
-        vold.te \
-        radio.te
+BOARD_SEPOLICY_DIRS += device/asus/grouper/sepolicy

@@ -36,10 +36,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.render_dirty_regions=false
 
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
 # Enable USB OTG support
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=true
@@ -49,7 +45,9 @@ include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_COPY_FILES += \
     device/asus/grouper/ueventd.grouper.rc:root/ueventd.grouper.rc \
     device/asus/grouper/init.grouper.usb.rc:root/init.grouper.usb.rc \
-    device/asus/grouper/gps.conf:system/etc/gps.conf
+    device/asus/grouper/gps.conf:system/etc/gps.conf \
+    device/asus/grouper/touch_fw_update.sh:system/bin/touch_fw_update.sh \
+    device/asus/grouper/gps_daemon.sh:system/bin/gps_daemon.sh
 
 ifneq ($(TARGET_PREBUILT_WIFI_MODULE),)
 PRODUCT_COPY_FILES += \
@@ -85,6 +83,7 @@ PRODUCT_PACKAGES := \
     wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
+    sensors-config \
     lights.grouper \
     audio.primary.grouper \
     power.grouper \
@@ -103,6 +102,7 @@ PRODUCT_PACKAGES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     nfc.grouper \
+    libnfc\
     Nfc \
     Tag
 
@@ -140,3 +140,11 @@ PRODUCT_COPY_FILES += \
 
 WIFI_BAND := 802_11_BG
  $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+
+# inherit from the non-open-source side
+$(call inherit-product, vendor/broadcom/grouper/broadcom-vendor.mk)
+$(call inherit-product, vendor/elan/grouper/elan-vendor.mk)
+$(call inherit-product, vendor/invensense/grouper/invensense-vendor.mk)
+$(call inherit-product, vendor/nvidia/grouper/nvidia-vendor.mk)
+$(call inherit-product, vendor/nxp/grouper/nxp-vendor.mk)
+$(call inherit-product, vendor/widevine/grouper/widevine-vendor.mk)
